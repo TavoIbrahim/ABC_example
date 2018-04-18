@@ -1,0 +1,55 @@
+// Priors and rules file
+// *********************
+
+[PARAMETERS]
+//here population sizes are in number of diploid individuals
+0	LOG10_ND_NOW	unif	2	8	output
+0	LOG10_ND_BOT	unif	0	6	output
+0	LOG10_NW_W	unif	3	7	output
+0	LOG10_NW_E	unif	3	7	output
+1	td	unif	3000	12000	output //domestication time
+1	tw	logunif	10	1000000	output //time of divergence between western and eastern wild pops
+0	SD_MUT_M	logunif	0.01	100	output
+0	LOG10_STR_MUT	unif	-6	-3	output
+0	P	unif	0.05	1	output
+0	LOG10_Md_ww	unif	-15	-2	output
+0	LOG10_Md_we	unif	-15	-2	output
+0	LOG10_Mww_d	unif	-15	-2	output
+0	LOG10_Mwe_d	unif	-15	-2	output
+0	LOG10_Mwwwe	unif	-15	-2	output
+0	LOG10_DNA_MUT	unif	-9	-6	output //mean nucleotide mutation rate
+0	LOG10_DNA_REC	unif	-12	-5	output //mean nucleotide recombination rate
+1	ALPHA_MUT	unif	1	15	output //shape parameter for individual mutation rates
+1	ALPHA_REC	unif	1	15	output //shape parameter for individual recombination rates
+
+[RULES]
+//constraints on the population-scaled mutation rate
+LOG10_DNA_MUT > log10(0.000025 / (pow10(LOG10_ND_NOW)))
+LOG10_DNA_MUT > log10(0.000025 / (pow10(LOG10_NW_W)))
+LOG10_DNA_MUT > log10(0.000025 / (pow10(LOG10_NW_E)))
+//constraints on the population recombination rate (if no constraints, fastsimcoal crashes)
+LOG10_DNA_REC < log10(0.0025 / (pow10(LOG10_ND_NOW)))
+LOG10_DNA_REC < log10(0.0025 / (pow10(LOG10_NW_W)))
+LOG10_DNA_REC < log10(0.0025 / (pow10(LOG10_NW_E)))
+td < tw
+LOG10_ND_BOT < LOG10_ND_NOW
+LOG10_ND_BOT < LOG10_NW_E
+
+[COMPLEX PARAMETERS]
+0	NW_rel = (pow10(LOG10_NW_W) + pow10(LOG10_NW_E)) / pow10(LOG10_NW_W)	hide //determine the size of the ancestral wild pop (here, the sum of the sizes of the eastern and western wild pops) before the split (needed by fastsimcoal)
+0	G = (log(pow10(LOG10_ND_BOT) / pow10(LOG10_ND_NOW))) / td	hide //exponential growth rate of the domesticated pop (needed by fastsimcoal)
+//population sizes in number of haploid individuals (needed by fastsimcoal)
+1	hND_NOW = pow10(LOG10_ND_NOW) * 2	hide
+1	hNW_W = pow10(LOG10_NW_W) * 2	hide
+1	hNW_E = pow10(LOG10_NW_E) * 2	hide
+0	Md_ww = pow10(LOG10_Md_ww)	hide
+0	Md_we = pow10(LOG10_Md_we)	hide
+0	Mww_d = pow10(LOG10_Mww_d)	hide
+0	Mwe_d = pow10(LOG10_Mwe_d)	hide
+0	Mwwwe = pow10(LOG10_Mwwwe)	hide
+0	STR_MUT = pow10(LOG10_STR_MUT)	hide
+0	LOG10_tw = log10(tw)	output
+0	SD_MUT_E = SD_MUT_M * STR_MUT	output
+0	LOG10_SD_MUT_E = log10(SD_MUT_E)	output
+0	DNA_MUT = pow10(LOG10_DNA_MUT)	hide
+0	DNA_REC = pow10(LOG10_DNA_REC)	hide

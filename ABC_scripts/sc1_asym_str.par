@@ -1,0 +1,107 @@
+//Number of population samples
+3 samples to simulate
+//Population effective sizes (haploid)
+hND_NOW
+hNW_W
+hNW_E
+//Sample sizes
+1350
+222
+454
+//Growth rate
+G
+0
+0
+//Number of migration matrices
+3
+//migration matrix 0
+0.000 Mww_d Mwe_d
+Md_ww 0.000 Mwwwe
+Md_we Mwwwe 0.000
+//migration matrix 1
+0.000 0.000 0.000
+0.000 0.000 Mwwwe
+0.000 Mwwwe 0.000
+//migration matrix 2
+0.000 0.000 0.000
+0.000 0.000 0.000
+0.000 0.000 0.000
+//historical event: time, source, sink, migrants, new size, growth rate, migr matrix
+2 historical events
+td 0 1 1 1 0 1
+tw 2 1 1 NW_rel 0 2
+//Number of independent loci [chromosome]
+18 1
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+//Per chromosome: number of linkage blocks
+1
+//per block: data type, num loci, rec rate and mut rate + optional parameters
+MICROSAT 1 0 #SD_MUT_E#STR_MUT &P 40
+
